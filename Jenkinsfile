@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Git Checkout') {
             steps {
-                git url: 'https://github.com/gangaraju587/durgam.git'    
+                git url: 'https://github.com/attecius/nodejs-sample-application.git'    
 		            echo "Code Checked-out Successfully!!";
             }
         }
@@ -17,20 +17,20 @@ pipeline {
         
       
 
-	stage('SonarQube analysis') {
-            steps {
-		// Change this as per your Jenkins Configuration
-                withSonarQubeEnv('SonarQube') {
-                    sh 'mvn package sonar:sonar'
-                }
-            }
-        }
+	// stage('SonarQube analysis') {
+    //         steps {
+	// 	// Change this as per your Jenkins Configuration
+    //             withSonarQubeEnv('SonarQube') {
+    //                 sh 'mvn package sonar:sonar'
+    //             }
+    //         }
+    //     }
 
-	stage("Quality gate") {
-            steps {
-                waitForQualityGate abortPipeline: true
-            }
-        }
+	// stage("Quality gate") {
+    //         steps {
+    //             waitForQualityGate abortPipeline: true
+    //         }
+    //     }
 	stage('SSH into server') {
             /*when {
                 expression {
