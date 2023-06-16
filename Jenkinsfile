@@ -31,7 +31,7 @@ pipeline {
     //             waitForQualityGate abortPipeline: true
     //         }
     //     }
-	stage('SSH into server') {
+	stage('script to run to have the docker image running') {
             /*when {
                 expression {
                     currentBuild.result == 'SUCCESS'
@@ -40,8 +40,6 @@ pipeline {
             steps {
 		    script {
 				    sh """
-				    whoami
-				    pwd
 				    mvn clean package
 				    docker build -t webapp .
 				    docker run -d -p 8081:8080 --entrypoint="/bin/sh" webapp -c "sh /usr/local/tomcat/bin/startup.sh;while true; do echo hello; sleep 10;done"
