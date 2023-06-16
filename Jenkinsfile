@@ -8,12 +8,12 @@ pipeline {
             }
         }
         
-        stage('Package') {
-            steps {
-                sh 'mvn package'    
-		            echo "Maven Package Goal Executed Successfully!";
-            }
-        }
+        // stage('Package') {
+        //     steps {
+        //         sh 'mvn package'    
+		//             echo "Maven Package Goal Executed Successfully!";
+        //     }
+        // }
         
       
 
