@@ -1,12 +1,12 @@
 pipeline {
     agent any
     stages {
-        // stage('Git Checkout') {
-        //     steps {
-        //         git url: 'https://github.com/attecius/nodejs-sample-application.git'    
-		//             echo "Code Checked-out Successfully!!";
-        //     }
-        // }
+        stage('Git Checkout') {
+            steps {
+                git url: 'https://github.com/attecius/nodejs-sample-application.git'    
+		            echo "Code Checked-out Successfully!!";
+            }
+        }
         
         // stage('Package') {
         //     steps {
